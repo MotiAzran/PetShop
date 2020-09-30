@@ -1,6 +1,6 @@
 package com.moti;
 
-public class Owner {
+public class Owner implements Cloneable{
     private String _name;
     private String _phone;
 
@@ -43,7 +43,12 @@ public class Owner {
     }
 
     @Override
-    public Owner clone() {
-        return new Owner(_name.toString(), _phone.toString());
+    public Object clone() throws CloneNotSupportedException {
+        Owner new_owner = (Owner) super.clone();
+
+        new_owner._name = _name;
+        new_owner._phone = _phone;
+
+        return new_owner;
     }
 }

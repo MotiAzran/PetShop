@@ -1,13 +1,18 @@
 package com.moti;
 
 public class Dog extends Mammal {
-    public Dog(String name, String color, int age, Owner owner) {
-        super(name, color, age, owner);
+    private Owner _owner;
+
+    public Dog(String name, String color, int age, Owner owner) throws CloneNotSupportedException {
+        super(name, color, age);
+
+        _owner = (Owner) owner.clone();
     }
 
     @Override
     public String toString() {
-        return String.format("Dog named %s, %d years old, own by %s in color %s", _name, _age, _owner.get_name(), _color);
+        return String.format("Dog named %s, %d years old, in color %s - Owner details: %s - %s",
+                _name, _age, _color, _owner.get_name(), _owner.get_phone());
     }
 
     @Override
@@ -29,12 +34,24 @@ public class Dog extends Mammal {
     }
 
     @Override
-    public Animal clone() {
-        return new Dog(_name.toString(), _color.toString(), _age, _owner.clone());
+    public Object clone()  throws CloneNotSupportedException {
+        Dog d = (Dog) super.clone();
+
+        d._owner = (Owner) _owner.clone();
+
+        return d;
     }
 
     @Override
     public void noise() {
         System.out.println(_name + " Barking");
+    }
+
+    public Owner get_owner() {
+        return _owner;
+    }
+
+    public void set_owner(Owner owner) throws CloneNotSupportedException {
+        _owner = (Owner) owner.clone();
     }
 }

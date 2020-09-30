@@ -27,9 +27,4 @@ public class Lizard extends Reptile {
 
         return _name.equals(l._name) && _color.equals(l._color) && _age == l._age;
     }
-
-    @Override
-    public Animal clone() {
-        return new Lizard(_name.toString(), _color.toString(), _age);
-    }
 }
