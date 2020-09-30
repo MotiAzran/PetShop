@@ -15,8 +15,8 @@ public class Main {
         pets.add(new Eagle("Igy", "Grey", 3));
 
         for (Animal pet : pets) {
-            System.out.println(pet.get_name() + " turn");
-            System.out.println("Details: " + pet.toString());
+            System.out.println("%s turn\n", pet.get_name());
+            System.out.printf("Details: %s\n", pet);
 
             pet.eat();
 
