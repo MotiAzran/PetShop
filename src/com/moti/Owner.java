@@ -1,30 +1,59 @@
 package com.moti;
 
-public class Owner implements Cloneable{
+/**
+ * Represent an animal owner
+ */
+public class Owner implements Cloneable {
     private String _name;
     private String _phone;
 
+    /**
+     * Initialize the owner
+     * @param name the owner name
+     * @param phone the owner phone number
+     */
     public Owner(String name, String phone) {
         _name = name;
         _phone = phone;
     }
 
-    public String get_name() {
+    /**
+     * Get owner name
+     * @return owner name
+     */
+    public String getName() {
         return _name;
     }
 
-    public String get_phone() {
-        return _phone;
-    }
-
-    public void set_name(String name) {
+    /**
+     * Set owner name
+     * @param name the new owner name
+     */
+    public void setName(String name) {
         _name = name;
     }
 
-    public void set_phone(String phone) {
+    /**
+     * Get owner phone number
+     * @return owner phone number
+     */
+    public String getPhone() {
+        return _phone;
+    }
+
+    /**
+     * Set owner phone number
+     * @param phone the new owner phone number
+     */
+    public void setPhone(String phone) {
         _phone = phone;
     }
 
+    /**
+     * Checks if the owner is the same as other owner
+     * @param other the other owner to compare
+     * @return true if the owners are the same, otherwise false
+     */
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -37,18 +66,23 @@ public class Owner implements Cloneable{
             return false;
         }
 
-        Owner o = (Owner)other;
+        Owner owner = (Owner) other;
 
-        return _name.equals(o._name) && _phone.equals(o._phone);
+        return _name.equals(owner._name) && _phone.equals(owner._phone);
     }
 
+    /**
+     * Clone this owner
+     * @return new cloned owner
+     * @throws CloneNotSupportedException
+     */
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Owner new_owner = (Owner) super.clone();
+        Owner clonedOwner = (Owner) super.clone();
 
-        new_owner._name = _name;
-        new_owner._phone = _phone;
+        clonedOwner._name = _name;
+        clonedOwner._phone = _phone;
 
-        return new_owner;
+        return clonedOwner;
     }
 }
