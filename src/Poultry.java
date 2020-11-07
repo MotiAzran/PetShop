@@ -1,10 +1,7 @@
-package com.moti;
-
 /**
  * Represent a poultry
  */
 public abstract class Poultry extends Animal {
-
     /**
      * Initialize the poultry
      * @param name the poultry name
@@ -16,20 +13,8 @@ public abstract class Poultry extends Animal {
     }
 
     /**
-     * Get string representation of the poultry
-     * @return string representation of the poultry
+     * Make the poultry fly
      */
-    @Override
-    abstract public String toString();
-
-    /**
-     * Checks if the poultry is equal the other poultry
-     * @param other the other poultry to compare
-     * @return true if the poultices are the same, otherwise false
-     */
-    @Override
-    abstract public boolean equals(Object other);
-
     public void fly() {
         System.out.println(_name + " flying");
     }

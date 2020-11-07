@@ -1,5 +1,3 @@
-package com.moti;
-
 /**
  * Animal abstract class, represent a general animal
  * It's name, color and age
@@ -32,12 +30,37 @@ public abstract class Animal implements Cloneable {
     abstract public void sleep();
 
     /**
+     * Get animal string representation
+     * @return string representation of the animal
+     */
+    @Override
+    public String toString() {
+        return String.format("Name: %s, Age: %d, Color: %s", _name, _age, _color);
+    }
+
+    /**
      * Checks if the animal is the same as other
      * @param other the other animal to compare
      * @return true if the animals are the same, otherwise false
      */
     @Override
-    abstract public boolean equals(Object other);
+    public boolean equals(Object other) {
+        if (other == this) {
+            // The same instance passed as parameter
+            return true;
+        } else if (null == other) {
+            return false;
+        }
+
+        if (!(other instanceof Animal)) {
+            // The object is not a Dog
+            return false;
+        }
+
+        Animal animal = (Animal) other;
+
+        return _name.equals(animal._name) && _age == animal._age && _color.equals(animal._color);
+    }
 
     /**
      * Clone the animal

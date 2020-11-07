@@ -1,10 +1,7 @@
-package com.moti;
-
 /**
  * Represent a reptile
  */
 public abstract class Reptile extends Animal {
-
     /**
      * Initialize the reptile
      * @param name the reptile name
@@ -14,21 +11,6 @@ public abstract class Reptile extends Animal {
     protected Reptile(String name, String color, int age) {
         super(name, color, age);
     }
-
-    /**
-     * Get string representation of the reptile
-     * @return string representation of the reptile
-     */
-    @Override
-    abstract public String toString();
-
-    /**
-     * Checks if the reptile is equal the other reptile
-     * @param other the other reptile to compare
-     * @return true if the reptiles are the same, otherwise false
-     */
-    @Override
-    abstract public boolean equals(Object other);
 
     /**
      * The reptile crawling

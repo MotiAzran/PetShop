@@ -1,5 +1,3 @@
-package com.moti;
-
 /**
  * Represent an animal owner
  */
@@ -84,5 +82,13 @@ public class Owner implements Cloneable {
         clonedOwner._phone = _phone;
 
         return clonedOwner;
+    }
+
+    /**
+     * Get string representation of owner
+     * @return string representation of owner
+     */
+    public String toString() {
+        return String.format("Name: %s, Phone: %s", _name, _phone);
     }
 }

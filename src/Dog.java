@@ -1,11 +1,9 @@
-package com.moti;
-
 /**
  * Represent a dog
  */
 public class Dog extends Mammal {
     // The dog owner
-    private Owner _owner;
+    protected Owner _owner;
 
     /**
      * Initialize the dog
@@ -27,8 +25,7 @@ public class Dog extends Mammal {
      */
     @Override
     public String toString() {
-        return String.format("Dog named %s, %d years old, in color %s - Owner details: %s - %s",
-                _name, _age, _color, _owner.getName(), _owner.getPhone());
+        return String.format("%s, Owner: %s", super.toString(), _owner);
     }
 
     /**
@@ -38,6 +35,10 @@ public class Dog extends Mammal {
      */
     @Override
     public boolean equals(Object other) {
+        if (!super.equals(other)) {
+            return false;
+        }
+
         if (other == this) {
             // The same instance passed as parameter
             return true;
@@ -51,7 +52,8 @@ public class Dog extends Mammal {
         // The object is a dog, and a different instance
         Dog dog = (Dog)other;
 
-        return _name.equals(dog._name) && _color.equals(dog._color) && _age == dog._age && _owner.equals(dog._owner);
+        // We checked all the other fields at the super function
+        return _owner.equals(dog._owner);
     }
 
     /**

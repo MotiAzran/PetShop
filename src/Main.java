@@ -1,7 +1,6 @@
 /*
  * The main file of the program
  */
-package com.moti;
 
 import java.util.ArrayList;
 
