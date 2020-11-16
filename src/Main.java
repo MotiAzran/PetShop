@@ -23,7 +23,7 @@ public class Main {
         // Add pets to the pets list
         pets.add(new Dog("Rexi", "Black", 12, new Owner("Moti", "0521111111")));
         pets.add(new Dog("Boni", "Brown", 7, new Owner("Moti", "0521111111")));
-        pets.add(new Lizard("Liz", "Green", 5));
+        pets.add(new Chameleon("Liz", "Green", 5));
         pets.add(new Dog("Tyson", "Gold", 1, new Owner("Moti", "0521111111")));
         pets.add(new Eagle("Igy", "Grey", 3));
 

@@ -16,7 +16,7 @@ public abstract class Poultry extends Animal {
      * Make the poultry fly
      */
     public void fly() {
-        System.out.println(_name + " flying");
+        System.out.println(name + " flying");
     }
 
     /**
@@ -24,7 +24,7 @@ public abstract class Poultry extends Animal {
      */
     @Override
     public void eat() {
-        System.out.println(_name + " eating");
+        System.out.println(name + " eating");
     }
 
     /**
@@ -32,6 +32,6 @@ public abstract class Poultry extends Animal {
      */
     @Override
     public void sleep() {
-        System.out.println(_name + " resting");
+        System.out.println(name + " resting");
     }
 }

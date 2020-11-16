@@ -2,8 +2,8 @@
  * Represent an animal owner
  */
 public class Owner implements Cloneable {
-    private String _name;
-    private String _phone;
+    private String name;
+    private String phone;
 
     /**
      * Initialize the owner
@@ -11,8 +11,8 @@ public class Owner implements Cloneable {
      * @param phone the owner phone number
      */
     public Owner(String name, String phone) {
-        _name = name;
-        _phone = phone;
+        this.name = name;
+        this.phone = phone;
     }
 
     /**
@@ -20,7 +20,7 @@ public class Owner implements Cloneable {
      * @return owner name
      */
     public String getName() {
-        return _name;
+        return name;
     }
 
     /**
@@ -28,7 +28,7 @@ public class Owner implements Cloneable {
      * @param name the new owner name
      */
     public void setName(String name) {
-        _name = name;
+        this.name = name;
     }
 
     /**
@@ -36,7 +36,7 @@ public class Owner implements Cloneable {
      * @return owner phone number
      */
     public String getPhone() {
-        return _phone;
+        return phone;
     }
 
     /**
@@ -44,7 +44,7 @@ public class Owner implements Cloneable {
      * @param phone the new owner phone number
      */
     public void setPhone(String phone) {
-        _phone = phone;
+        this.phone = phone;
     }
 
     /**
@@ -66,7 +66,7 @@ public class Owner implements Cloneable {
 
         Owner owner = (Owner) other;
 
-        return _name.equals(owner._name) && _phone.equals(owner._phone);
+        return name.equals(owner.name) && phone.equals(owner.phone);
     }
 
     /**
@@ -78,8 +78,8 @@ public class Owner implements Cloneable {
     public Object clone() throws CloneNotSupportedException {
         Owner clonedOwner = (Owner) super.clone();
 
-        clonedOwner._name = _name;
-        clonedOwner._phone = _phone;
+        clonedOwner.name = name;
+        clonedOwner.phone = phone;
 
         return clonedOwner;
     }
@@ -89,6 +89,6 @@ public class Owner implements Cloneable {
      * @return string representation of owner
      */
     public String toString() {
-        return String.format("Name: %s, Phone: %s", _name, _phone);
+        return String.format("Name: %s, Phone: %s", name, phone);
     }
 }

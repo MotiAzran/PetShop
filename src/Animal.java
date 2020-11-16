@@ -3,9 +3,9 @@
  * It's name, color and age
  */
 public abstract class Animal implements Cloneable {
-    protected String _name;
-    protected String _color;
-    protected int _age;
+    protected String name;
+    protected String color;
+    protected int age;
 
     /**
      * Initialize the object
@@ -14,9 +14,9 @@ public abstract class Animal implements Cloneable {
      * @param age the animal age
      */
     protected Animal(String name, String color, int age) {
-        _name = name;
-        _color = color;
-        _age = age;
+        this.name = name;
+        this.color = color;
+        this.age = age;
     }
 
     /**
@@ -35,7 +35,7 @@ public abstract class Animal implements Cloneable {
      */
     @Override
     public String toString() {
-        return String.format("Name: %s, Age: %d, Color: %s", _name, _age, _color);
+        return String.format("Name: %s, Age: %d, Color: %s", name, age, color);
     }
 
     /**
@@ -59,7 +59,7 @@ public abstract class Animal implements Cloneable {
 
         Animal animal = (Animal) other;
 
-        return _name.equals(animal._name) && _age == animal._age && _color.equals(animal._color);
+        return name.equals(animal.name) && age == animal.age && color.equals(animal.color);
     }
 
     /**
@@ -71,9 +71,9 @@ public abstract class Animal implements Cloneable {
     public Object clone() throws CloneNotSupportedException {
         Animal clonedAnimal = (Animal) super.clone();
 
-        clonedAnimal._name = _name;
-        clonedAnimal._color = _color;
-        clonedAnimal._age = _age;
+        clonedAnimal.name = this.name;
+        clonedAnimal.color = this.color;
+        clonedAnimal.age = this.age;
 
         return clonedAnimal;
     }
@@ -83,7 +83,7 @@ public abstract class Animal implements Cloneable {
      * @return the animal name
      */
     public String getName() {
-        return _name;
+        return name;
     }
 
     /**
@@ -91,7 +91,7 @@ public abstract class Animal implements Cloneable {
      * @param name the animal new name
      */
     public void setName(String name) {
-        _name = name;
+        this.name = name;
     }
 
     /**
@@ -99,7 +99,7 @@ public abstract class Animal implements Cloneable {
      * @return the animal color
      */
     public String getColor() {
-        return _color;
+        return color;
     }
 
     /**
@@ -107,7 +107,7 @@ public abstract class Animal implements Cloneable {
      * @param color the animal new color
      */
     public void setColor(String color) {
-        _color = color;
+        this.color = color;
     }
 
     /**
@@ -115,7 +115,7 @@ public abstract class Animal implements Cloneable {
      * @return the animal age
      */
     public int getAge() {
-        return _age;
+        return age;
     }
 
     /**
@@ -123,6 +123,6 @@ public abstract class Animal implements Cloneable {
      * @param age the animal new age
      */
     public void setAge(int age) {
-        _age = age;
+        this.age = age;
     }
 }

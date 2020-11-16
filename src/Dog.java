@@ -3,7 +3,7 @@
  */
 public class Dog extends Mammal {
     // The dog owner
-    protected Owner _owner;
+    protected Owner owner;
 
     /**
      * Initialize the dog
@@ -16,7 +16,7 @@ public class Dog extends Mammal {
     public Dog(String name, String color, int age, Owner owner) throws CloneNotSupportedException {
         super(name, color, age);
 
-        _owner = (Owner) owner.clone();
+        this.owner = (Owner) owner.clone();
     }
 
     /**
@@ -25,7 +25,7 @@ public class Dog extends Mammal {
      */
     @Override
     public String toString() {
-        return String.format("%s, Owner: %s", super.toString(), _owner);
+        return String.format("%s, Owner: %s", super.toString(), owner);
     }
 
     /**
@@ -39,11 +39,6 @@ public class Dog extends Mammal {
             return false;
         }
 
-        if (other == this) {
-            // The same instance passed as parameter
-            return true;
-        }
-
         if (!(other instanceof Dog)) {
             // The object is not a Dog
             return false;
@@ -53,7 +48,7 @@ public class Dog extends Mammal {
         Dog dog = (Dog)other;
 
         // We checked all the other fields at the super function
-        return _owner.equals(dog._owner);
+        return owner.equals(dog.owner);
     }
 
     /**
@@ -65,7 +60,7 @@ public class Dog extends Mammal {
     public Object clone()  throws CloneNotSupportedException {
         Dog clonedDog = (Dog) super.clone();
 
-        clonedDog._owner = (Owner) _owner.clone();
+        clonedDog.owner = (Owner) owner.clone();
 
         return clonedDog;
     }
@@ -75,7 +70,7 @@ public class Dog extends Mammal {
      */
     @Override
     public void noise() {
-        System.out.println(_name + " Barking");
+        System.out.println(name + " Barking");
     }
 
     /**
@@ -83,7 +78,7 @@ public class Dog extends Mammal {
      * @return the dog owner
      */
     public Owner getOwner() {
-        return _owner;
+        return owner;
     }
 
     /**
@@ -91,6 +86,6 @@ public class Dog extends Mammal {
      * @param owner the new dog owner
      */
     public void setOwner(Owner owner) {
-        _owner = owner;
+        this.owner = owner;
     }
 }

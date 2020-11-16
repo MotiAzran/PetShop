@@ -16,7 +16,7 @@ public abstract class Reptile extends Animal {
      * The reptile crawling
      */
     public void crawl() {
-        System.out.println(_name + " crawling");
+        System.out.println(name + " crawling");
     }
 
     /**
@@ -24,7 +24,7 @@ public abstract class Reptile extends Animal {
      */
     @Override
     public void eat() {
-        System.out.println(_name + " chewing");
+        System.out.println(name + " chewing");
     }
 
     /**
@@ -32,6 +32,6 @@ public abstract class Reptile extends Animal {
      */
     @Override
     public void sleep() {
-        System.out.println(_name + " sleeping");
+        System.out.println(name + " sleeping");
     }
 }
