@@ -20,6 +20,13 @@ public abstract class Poultry extends Animal {
     }
 
     /**
+     * Make the poultry glide
+     */
+    public void glide() {
+        System.out.println(name + " gliding");
+    }
+
+    /**
      * Feed the poultry
      */
     @Override

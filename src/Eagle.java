@@ -13,10 +13,6 @@ public class Eagle extends Poultry {
         super(name, color, age);
     }
 
-    public void glide() {
-        System.out.println(name + " gliding");
-    }
-
     @Override
     public boolean equals(Object other) {
         return super.equals(other) && (other instanceof Eagle);
